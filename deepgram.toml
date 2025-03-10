@@ -1,0 +1,18 @@
+[meta]
+author = "Deepgram DX Team <devrel@deepgram.com> (https://developers.deepgram.com)"
+description = "Get started using Deepgram's Transcription with this Node demo app"
+framework = "Node"
+language = "TypeScript"
+sdk = "3.11.2"
+title = "Node Transcription Starter"
+useCase = "STT"
+
+[build]
+command = "npm install"
+
+[config]
+output = ".env"
+sample = "sample.env"
+
+[post-build]
+message = "Run `npm start -- --serve` to start the web server."
