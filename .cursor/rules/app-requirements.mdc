@@ -1,38 +1,18 @@
 ---
-description: Node Starter App Requirements
+description: Deepgram Luke App Requirements
 globs: index.ts, src/*.ts
 alwaysApply: false
 ---
 # Node Starter App Requirements
 
 ## Core Requirements
-- SHOULD live in a single file with minimal dependencies, i.e. `index.ts`
-- SHOULD uses TypeScript, not JavaScript
-- SHOULD use the latest version of the official SDK where provided
-- MUST falls back to manual integration using the API spec where there is no SDK
-- MUST be usable in command line with a single command
-- MUST be able to run it with `--serve` flag that will start it as a http server
-- MUST default to https://dpgr.am/spacewalk.wav as a source audio file
-- MUST get API keys and other sensitive config from a `.env` file
-- MUST respond with JSON, i.e.
-    ```json
-    {"transcript": "%response from Deepgram goes here%"}
-    ```
-
-## Command Line Usage
-- SHOULD accept --url= flag to provide a source audio file by URL
-- SHOULD accept --path= flag to provide a source audio file by path
-- MUST pretty-print and word-wrap the JSON response
-
-## Server Usage (--serve flag)
-- MUST accept POST requests only
-- MUST accept JSON body for a file URL, i.e.
-    ```json
-    {"url": "%url to source file%"}
-    ```
-- MUST NOT pretty-print or word-wrap the JSON response
+- SHOULD be go Go app
+- SHOULD build to .bin/processor
 
 ## User Prerequisites
 - MUST have the correct runtime installed
-- MUST install any dependencies, i.e. `npm install`
+- MUST install any dependencies
 - MUST be using at least the same runtime version that app was made developed for
+
+## Sources
+- https://github.com/deepgram/deepgram-api-specs/blob/main/openapi.yml

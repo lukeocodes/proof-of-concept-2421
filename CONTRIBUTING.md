@@ -1,51 +1,58 @@
-# Contributing to Deepgram Node Transcription Starter
+# Contributing Guidelines
 
-## Welcome
+Thank you for your interest in contributing to our project! We welcome contributions from everyone.
 
-Thank you for considering contributing to the Deepgram Node Transcription Starter! We welcome contributions from the community to help make this project better.
+## Code of Conduct
 
-## Getting Started
+This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-1. Please read our [Code of Conduct](CODE_OF_CONDUCT.md)
-2. Fork the repository and create your branch from `main`
-3. Follow the GitHub flow for making changes
-4. Submit a Pull Request
+## How to Contribute
+
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Make your changes
+4. Write or update tests as needed
+5. Run the test suite
+6. Submit a pull request
+
+## Pull Request Process
+
+1. Update the README.md with details of changes if applicable
+2. Update the documentation as needed
+3. The PR will be merged once you have the sign-off of at least one maintainer
+
+## Development Setup
+
+1. Install Go 1.21 or later
+2. Clone the repository
+3. Run `go mod download`
+4. Build the project with `go build ./cmd/main`
+
+## Testing
+
+Run the tests with:
+
+```bash
+go test ./...
+```
 
 ## Reporting Issues
 
-Before submitting a bug report:
+- Use the issue tracker to report bugs
+- Describe the bug and include specific details to help maintainers reproduce the problem
+- Include the steps to reproduce the behavior
+- Include the version of the project you are using
 
-- Check if the issue has already been reported
-- If you find a similar issue, add your information to the existing one
+## Feature Requests
 
-When submitting a new issue:
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
-- Use a clear and descriptive title
-- Provide detailed steps to reproduce the issue
-- Include code examples or screenshots where helpful
-- Describe the expected vs actual behaviour
-- Mention your environment details
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
 
-## Suggesting Enhancements
+## License
 
-We love hearing new ideas! Before submitting an enhancement suggestion:
-
-- Check if it's already been suggested
-- Be clear about how your suggestion improves the project
-- Provide examples of how it would work
-
-## Pull Requests
-
-1. Follow our coding standards
-2. Update documentation as needed
-3. Add tests for new features
-4. Ensure all tests pass
-5. Reference any related issues
-
-## Need Help?
-
-- Join our [Discord community](https://discord.gg/deepgram)
-- Visit our [GitHub Discussions](https://github.com/orgs/deepgram/discussions)
-- Follow us on [Bluesky](https://bsky.app/profile/deepgram.com)
-
-Thank you for contributing!
+By contributing, you agree that your contributions will be licensed under the same license as the project.

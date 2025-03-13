@@ -1,104 +1,69 @@
-# Node Transcription Starter
+# Deepgram Luke
 
-Get started using Deepgram's Transcription with this Node demo app. This starter app demonstrates how to transcribe audio using Deepgram's API.
+## An Repo Maintaining AI application
 
-## Prerequisites
-
-Before you begin, ensure you have:
-
-- Node.js (check package.json for minimum version requirement)
-- NPM (Node Package Manager)
-
-## Environment Setup
-
-1. Create a `.env` file by copying the contents of `sample.env`:
-   ```bash
-   cp sample.env .env
-   ```
-
-2. Replace the placeholder in `.env` with your Deepgram API key:
-   ```
-   DEEPGRAM_API_KEY=your_api_key_here
-   ```
-
-   Don't have an API key? Visit [Deepgram's Console](https://console.deepgram.com) to get one.
+A Go-based tool for processing files using AI capabilities. This tool reads a directory structure, processes files according to `.cursor/rules` markdown component rules, and interacts with AI services.
 
 ## Installation
 
-Install all required dependencies:
-
 ```bash
-npm install
+go mod download
+go build -o ./.bin/processor ./cmd/main
 ```
 
 ## Usage
 
-### Command Line Usage
-
-By default, the app will transcribe our sample audio file (<https://dpgr.am/spacewalk.wav>).
-
-```bash
-npm start
-```
-
-You can also specify your own audio file:
+1. Create a `.lukeignore` file to specify which files/directories to ignore
+2. Place your rules in the `cursor/rules` directory
+3. Run the tool:
 
 ```bash
-# Transcribe from a URL
-npm start -- --url=https://example.com/audio.wav
-
-# Transcribe from a local file
-npm start -- --path=./path/to/audio.wav
+./.bin/processor
 ```
 
-The response will be pretty-printed and word-wrapped JSON in this format:
-```json
-{
-  "transcript": "transcription result from Deepgram goes here"
-}
+## Configuration
+
+### .lukeignore
+
+The `.lukeignore` file uses patterns similar to `.gitignore`. Example:
+
+```
+.cursor/
+.git/
+*.tmp
 ```
 
-### Web Server Usage
+### Rules
 
-Start the app as a web server:
+Place your rule files in `cursor/rules/`. Each rule file should contain instructions for processing specific types of files.
 
-```bash
-npm start -- --serve
+## Development
+
+### Project Structure
+
 ```
-
-Send POST requests to the server with a JSON body containing the audio file URL:
-
-```bash
-curl -X POST http://localhost:3000 \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com/audio.wav"}'
+.
+├── cmd/
+│   └── main/
+│       └── main.go
+├── pkg/
+│   ├── config/
+│   ├── filetree/
+│   ├── rules/
+│   └── tools/
+├── .lukeignore
+├── go.mod
+└── README.md
 ```
-
-The server will respond with JSON in this format:
-```json
-{"transcript":"transcription result from Deepgram goes here"}
-```
-
-## Contributing
-
-We welcome contributions to make this project better! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to get started.
-
-## Security
-
-For information about our security policy and how to report security issues, please see our [Security Policy](SECURITY.md).
-
-## Code of Conduct
-
-This project and everyone participating in it are governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
 
 ## License
 
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+See [LICENSE](LICENSE) file for details.
 
-## Getting Help
+## Contributing
 
-Need assistance? We're here to help!
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-- Join our [Discord community](https://discord.gg/deepgram) for support
-- Found a bug? [Open an issue](https://github.com/deepgram/deepgram-starters/issues/new)
-- Have a feature request? [Open an issue](https://github.com/deepgram/deepgram-starters/issues/new)
+## Security
+
+For security concerns, please see our [Security Policy](SECURITY.md).

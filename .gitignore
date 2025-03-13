@@ -37,3 +37,7 @@ coverage/
 
 # Optional eslint cache
 .eslintcache
+
+# Generated files
+chat_config.json
+.bin/
