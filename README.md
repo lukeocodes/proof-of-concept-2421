@@ -1,33 +1,44 @@
-# Deepgram Luke
+# 10x Barry
 
 ## An Repo Maintaining AI application
 
 A Go-based tool for processing files using AI capabilities. This tool reads a directory structure, processes files according to `.cursor/rules` markdown component rules, and interacts with AI services.
 
+## Prerequisites
+
+- Go 1.18+ installed
+- A valid internet connection
+
 ## Installation
 
 ```bash
 go mod download
-go build -o ./.bin/processor ./cmd/main
+go build -o ./.bin/baz ./cmd/main
 ```
 
 ## Usage
 
-1. Create a `.lukeignore` file to specify which files/directories to ignore
-2. Place your rules in the `cursor/rules` directory
-3. Run the tool:
+This starter app can be used in two ways:
 
-```bash
-./.bin/processor
-```
+1. CLI Usage:
+   - Run the tool from the terminal to process your files interactively.
+   - For example:  
+
+     ```bash
+     ./.bin/baz
+     ```
+
+2. Library Usage:
+   - Integrate the core functionality of this app within your own Go application.
+   - Import the relevant packages from this repo into your code and call the exported functions.
 
 ## Configuration
 
-### .lukeignore
+### .bazignore
 
-The `.lukeignore` file uses patterns similar to `.gitignore`. Example:
+The `.bazignore` file uses patterns similar to `.gitignore`. Example:
 
-```
+```sh
 .cursor/
 .git/
 *.tmp
@@ -35,13 +46,13 @@ The `.lukeignore` file uses patterns similar to `.gitignore`. Example:
 
 ### Rules
 
-Place your rule files in `cursor/rules/`. Each rule file should contain instructions for processing specific types of files.
+Place your rule files in `.cursor/rules/`. Each rule file should contain instructions for processing specific types of files.
 
 ## Development
 
 ### Project Structure
 
-```
+```sh
 .
 ├── cmd/
 │   └── main/
@@ -51,10 +62,18 @@ Place your rule files in `cursor/rules/`. Each rule file should contain instruct
 │   ├── filetree/
 │   ├── rules/
 │   └── tools/
-├── .lukeignore
+├── .bazignore
 ├── go.mod
 └── README.md
 ```
+
+## Getting Help
+
+If you have any questions or need help using this application, join our [Discord](https://discord.gg/deepgram) community.
+
+## Reporting Issues and Feature Requests
+
+If you encounter any bugs, or have a feature request, please open an issue in this repository.
 
 ## License
 
@@ -67,3 +86,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Security
 
 For security concerns, please see our [Security Policy](SECURITY.md).
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for our code of conduct guidelines.

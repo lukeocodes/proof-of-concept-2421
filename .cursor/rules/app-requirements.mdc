@@ -1,18 +1,13 @@
 ---
-description: Deepgram Luke App Requirements
+description: 10x Barry App Requirements
 globs: index.ts, src/*.ts
 alwaysApply: false
 ---
-# Node Starter App Requirements
-
 ## Core Requirements
 - SHOULD be go Go app
-- SHOULD build to .bin/processor
+- SHOULD build to .bin/baz
 
 ## User Prerequisites
 - MUST have the correct runtime installed
 - MUST install any dependencies
 - MUST be using at least the same runtime version that app was made developed for
-
-## Sources
-- https://github.com/deepgram/deepgram-api-specs/blob/main/openapi.yml

@@ -7,6 +7,8 @@ alwaysApply: false
 
 Write the contents based on the YAML instructions.
 
+Also link to developers.deepgram.com
+
 ## YAML Instructions
 
 ```yaml

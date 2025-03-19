@@ -1,5 +1,8 @@
 # Security Policy
 
+Deepgram's security policy can be found on our main website.
+For more details, see [Deepgram's security policy](https://developers.deepgram.com/documentation/security/security-policy/).
+
 ## Supported Versions
 
 We release patches for security vulnerabilities. Which versions are eligible for receiving such patches depends on the CVSS v3.0 Rating:
