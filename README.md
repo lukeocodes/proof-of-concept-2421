@@ -1,104 +1,92 @@
-# Node Transcription Starter
+# 10x Barry
 
-Get started using Deepgram's Transcription with this Node demo app. This starter app demonstrates how to transcribe audio using Deepgram's API.
+## An Repo Maintaining AI application
+
+A Go-based tool for processing files using AI capabilities. This tool reads a directory structure, processes files according to `.cursor/rules` markdown component rules, and interacts with AI services.
 
 ## Prerequisites
 
-Before you begin, ensure you have:
-
-- Node.js (check package.json for minimum version requirement)
-- NPM (Node Package Manager)
-
-## Environment Setup
-
-1. Create a `.env` file by copying the contents of `sample.env`:
-   ```bash
-   cp sample.env .env
-   ```
-
-2. Replace the placeholder in `.env` with your Deepgram API key:
-   ```
-   DEEPGRAM_API_KEY=your_api_key_here
-   ```
-
-   Don't have an API key? Visit [Deepgram's Console](https://console.deepgram.com) to get one.
+- Go 1.18+ installed
+- A valid internet connection
 
 ## Installation
 
-Install all required dependencies:
-
 ```bash
-npm install
+go mod download
+go build -o ./.bin/baz ./cmd/main
 ```
 
 ## Usage
 
-### Command Line Usage
+This starter app can be used in two ways:
 
-By default, the app will transcribe our sample audio file (<https://dpgr.am/spacewalk.wav>).
+1. CLI Usage:
+   - Run the tool from the terminal to process your files interactively.
+   - For example:  
 
-```bash
-npm start
+     ```bash
+     ./.bin/baz
+     ```
+
+2. Library Usage:
+   - Integrate the core functionality of this app within your own Go application.
+   - Import the relevant packages from this repo into your code and call the exported functions.
+
+## Configuration
+
+### .bazignore
+
+The `.bazignore` file uses patterns similar to `.gitignore`. Example:
+
+```sh
+.cursor/
+.git/
+*.tmp
 ```
 
-You can also specify your own audio file:
+### Rules
 
-```bash
-# Transcribe from a URL
-npm start -- --url=https://example.com/audio.wav
+Place your rule files in `.cursor/rules/`. Each rule file should contain instructions for processing specific types of files.
 
-# Transcribe from a local file
-npm start -- --path=./path/to/audio.wav
+## Development
+
+### Project Structure
+
+```sh
+.
+├── cmd/
+│   └── main/
+│       └── main.go
+├── pkg/
+│   ├── config/
+│   ├── filetree/
+│   ├── rules/
+│   └── tools/
+├── .bazignore
+├── go.mod
+└── README.md
 ```
-
-The response will be pretty-printed and word-wrapped JSON in this format:
-```json
-{
-  "transcript": "transcription result from Deepgram goes here"
-}
-```
-
-### Web Server Usage
-
-Start the app as a web server:
-
-```bash
-npm start -- --serve
-```
-
-Send POST requests to the server with a JSON body containing the audio file URL:
-
-```bash
-curl -X POST http://localhost:3000 \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com/audio.wav"}'
-```
-
-The server will respond with JSON in this format:
-```json
-{"transcript":"transcription result from Deepgram goes here"}
-```
-
-## Contributing
-
-We welcome contributions to make this project better! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to get started.
-
-## Security
-
-For information about our security policy and how to report security issues, please see our [Security Policy](SECURITY.md).
-
-## Code of Conduct
-
-This project and everyone participating in it are governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold this code.
-
-## License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
 
 ## Getting Help
 
-Need assistance? We're here to help!
+If you have any questions or need help using this application, join our [Discord](https://discord.gg/deepgram) community.
 
-- Join our [Discord community](https://discord.gg/deepgram) for support
-- Found a bug? [Open an issue](https://github.com/deepgram/deepgram-starters/issues/new)
-- Have a feature request? [Open an issue](https://github.com/deepgram/deepgram-starters/issues/new)
+## Reporting Issues and Feature Requests
+
+If you encounter any bugs, or have a feature request, please open an issue in this repository.
+
+## License
+
+See [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## Security
+
+For security concerns, please see our [Security Policy](SECURITY.md).
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for our code of conduct guidelines.

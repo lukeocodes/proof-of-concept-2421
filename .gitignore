@@ -37,3 +37,11 @@ coverage/
 
 # Optional eslint cache
 .eslintcache
+
+# DS_Store
+.DS_Store
+
+# diffs
+.patches/
+
+**/.DS_Store

@@ -1,51 +1,85 @@
-# Contributing to Deepgram Node Transcription Starter
+# Contributing Guidelines
 
-## Welcome
+## Description
+We welcome contributions! Before adding new functionality, open an issue first. Bug reports, fixes, and feedback are always appreciated.
 
-Thank you for considering contributing to the Deepgram Node Transcription Starter! We welcome contributions from the community to help make this project better.
+## References
+- Follow the [GitHub Flow](https://guides.github.com/introduction/flow/index.html)  
+- Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing
 
-## Getting Started
+## Code of Conduct
+This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-1. Please read our [Code of Conduct](CODE_OF_CONDUCT.md)
-2. Fork the repository and create your branch from `main`
-3. Follow the GitHub flow for making changes
-4. Submit a Pull Request
+## First-Time Contributors
+Check issues labeled <code>beginner</code> and <code>help-wanted</code> to get started.
 
-## Reporting Issues
+## Reporting Bugs
 
-Before submitting a bug report:
+### Before Submitting
+- Search existing issues and comment if one exists instead of creating a duplicate.
 
-- Check if the issue has already been reported
-- If you find a similar issue, add your information to the existing one
-
-When submitting a new issue:
-
-- Use a clear and descriptive title
-- Provide detailed steps to reproduce the issue
-- Include code examples or screenshots where helpful
-- Describe the expected vs actual behaviour
-- Mention your environment details
+### Submitting
+- Use a clear title.  
+- List the exact steps to reproduce the issue.  
+- Provide examples, links, or code snippets.  
+- Describe observed vs. expected behavior.  
+- Include screenshots or GIFs (you can use tools like [LICEcap](https://www.cockos.com/licecap/) or [Silentcast](https://github.com/colinkeenan/silentcast)).  
+- Mention if the issue is consistent or intermittent and share environment details.
 
 ## Suggesting Enhancements
 
-We love hearing new ideas! Before submitting an enhancement suggestion:
+### Before Submitting
+- Search existing suggestions and comment on one instead of creating a duplicate.
 
-- Check if it's already been suggested
-- Be clear about how your suggestion improves the project
-- Provide examples of how it would work
+### Submitting
+- Use a clear title.  
+- Describe the enhancement step-by-step.  
+- Provide examples or code snippets.  
+- Explain current vs. expected behavior and its benefits.
+
+## How to Contribute
+1. Fork the repository  
+2. Create a new branch for your feature or bug fix  
+3. Make your changes  
+4. Write or update tests as needed  
+5. Run the test suite  
+6. Submit a pull request
 
 ## Pull Requests
 
-1. Follow our coding standards
-2. Update documentation as needed
-3. Add tests for new features
-4. Ensure all tests pass
-5. Reference any related issues
+### Steps
+1. Use the Pull Request template (see [PULL_REQUEST_TEMPLATE/PULL_REQUEST_TEMPLATE.md](PULL_REQUEST_TEMPLATE/PULL_REQUEST_TEMPLATE.md)).  
+2. Follow the Code of Conduct.  
+3. Ensure all status checks pass before review ([GitHub status checks](https://help.github.com/articles/about-status-checks/)).  
 
-## Need Help?
+### Review Policy
+Reviewers may request additional changes before merging. The PR will be merged once you have the sign-off of at least one maintainer and all conditions are met.
 
-- Join our [Discord community](https://discord.gg/deepgram)
-- Visit our [GitHub Discussions](https://github.com/orgs/deepgram/discussions)
-- Follow us on [Bluesky](https://bsky.app/profile/deepgram.com)
+## Development Setup
+1. Install Go 1.21 or later  
+2. Clone the repository  
+3. Run <code>go mod download</code>  
+4. Build the project with <code>go build ./cmd/main</code>
 
-Thank you for contributing!
+## Testing
+Run the tests with:
+```bash
+go test ./...
+```
+
+## Questions
+If you have questions, feel free to contact the devrel team in any of these formats:  
+- GitHub Discussions: https://github.com/orgs/deepgram/discussions  
+- Discord: https://discord.gg/deepgram  
+- Bluesky: https://bsky.app/profile/deepgram.com  
+
+## Feature Requests
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+- Reporting a bug  
+- Discussing the current state of the code  
+- Submitting a fix  
+- Proposing new features  
+- Becoming a maintainer  
+
+## License
+By contributing, you agree that your contributions will be licensed under the same license as the project.
