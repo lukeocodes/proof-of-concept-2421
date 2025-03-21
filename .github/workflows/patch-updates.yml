@@ -20,7 +20,7 @@ jobs:
         run: |
           mkdir -p .bin
           # Download Linux version of the binary
-          curl -L https://raw.githubusercontent.com/lukeocodes/proof-of-concept-2421/refs/heads/lo/review-agent/.bin/baz.linux -o .bin/baz
+          curl -L https://raw.githubusercontent.com/lukeocodes/10x-barry/refs/heads/main/.bin/baz.linux -o .bin/baz
           chmod +x .bin/baz
           # Verify architecture
           file .bin/baz
