@@ -1,0 +1,65 @@
+name: 10x-Barry Updates
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # Run at 9am UTC
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-from-patches:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download 10x-Barry binary
+        run: |
+          mkdir -p .bin
+          curl -L https://raw.githubusercontent.com/lukeocodes/proof-of-concept-2421/refs/heads/lo/review-agent/.bin/baz -o .bin/baz
+          chmod +x .bin/baz
+
+      - name: Run 10x-Barry command
+        run: ./.bin/baz
+
+      - name: Process patch files and create updates
+        run: |
+          # Create a new branch with timestamp
+          BRANCH_NAME="patch-updates-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+
+          # Process each .patch file
+          find .patches -name "*.patch" | while read patch_file; do
+            # Get the target file name by removing .patch extension and .patches/ prefix
+            target_file="${patch_file#.patches/}"
+            target_file="${target_file%.patch}"
+            
+            # Only copy if target file exists
+            if [ -f "$target_file" ]; then
+              echo "Updating existing file: $target_file"
+              cp "$patch_file" "$target_file"
+              git add "$target_file"
+            else
+              echo "Skipping non-existent file: $target_file"
+            fi
+          done
+
+          # Check if there are any changes
+          if ! git diff --cached --quiet; then
+            git config --global user.name "GitHub Actions Bot"
+            git config --global user.email "actions@github.com"
+            git commit -m "feat: update files from patches (automated) [skip-ci]"
+            git push origin $BRANCH_NAME
+
+            # Create Pull Request using GitHub CLI
+            gh pr create \
+              --title "Update files from patches" \
+              --body "This PR was automatically generated to update files from their corresponding patch files in the .patches directory." \
+              --base main \
+              --head $BRANCH_NAME
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
