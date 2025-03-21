@@ -1,3 +1,3 @@
 # Code of Conduct
 
-Deepgram's code of conduct can be found on our website at [https://dpgr.am/coc](https://dpgr.am/coc). We are committed to fostering an open and welcoming environment. For more information, please refer to that page or contact us directly.
+Deepgram's code of conduct can be found on our website at [https://dpgr.am/coc](https://dpgr.am/coc). We are committed to fostering an open and welcoming environment. For more information, please refer to that page or visit [https://developers.deepgram.com](https://developers.deepgram.com), or contact us directly.
