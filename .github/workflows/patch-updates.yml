@@ -27,6 +27,8 @@ jobs:
 
       - name: Run 10x-Barry command
         run: ./.bin/baz
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Process patch files and create updates
         run: |
