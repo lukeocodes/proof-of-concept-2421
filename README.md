@@ -11,10 +11,25 @@ A Go-based tool for processing files using AI capabilities. This tool reads a di
 
 ## Installation
 
+To build the binary:
+
 ```bash
 go mod download
+```
+
+### Building for your current platform
+
+```bash
 go build -o ./.bin/baz ./cmd/main
 ```
+
+### Building for Linux (required for GitHub Actions)
+
+```bash
+GOOS=linux GOARCH=amd64 go build -o ./.bin/baz.linux ./cmd/main
+```
+
+> **Note**: Always build both your platform-specific binary and the Linux binary. The Linux binary is required for GitHub Actions workflows.
 
 ## Usage
 

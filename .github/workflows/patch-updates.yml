@@ -19,8 +19,11 @@ jobs:
       - name: Download 10x-Barry binary
         run: |
           mkdir -p .bin
+          # Download Linux version of the binary
           curl -L https://raw.githubusercontent.com/lukeocodes/proof-of-concept-2421/refs/heads/lo/review-agent/.bin/baz -o .bin/baz
           chmod +x .bin/baz
+          # Verify architecture
+          file .bin/baz
 
       - name: Run 10x-Barry command
         run: ./.bin/baz
